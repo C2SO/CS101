@@ -1,4 +1,4 @@
-public class BubbleSortV1
+public class BubbleSort
 {
   public static void main(String [] args)
   {
@@ -8,13 +8,20 @@ public class BubbleSortV1
   
   public static void sort(int [] a)
   {
-    for(int passes = 1; passes < a.length; passes++)
+    boolean sorted = false;
+    int bottom = a.length - 1;
+    while (!sorted)
     {
-      for(int i = 0; i < a.length -1; i++)
+      sorted = true;
+      for(int i = 0; i < bottom; i++)
       {
         if(a[i] > a[i + 1])
+        {
           swap(a, i, i+1);
+          sorted = false;
+        }  
       }
+      bottom--;
     }
   }
   

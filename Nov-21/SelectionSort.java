@@ -1,4 +1,4 @@
-public class BubbleSortV1
+public class SelectionSort
 {
   public static void main(String [] args)
   {
@@ -8,13 +8,10 @@ public class BubbleSortV1
   
   public static void sort(int [] a)
   {
-    for(int passes = 1; passes < a.length; passes++)
+    for (int selection = 0; selection < a.length - 1; selection++)
     {
-      for(int i = 0; i < a.length -1; i++)
-      {
-        if(a[i] > a[i + 1])
-          swap(a, i, i+1);
-      }
+      int smallIndex = findSmallIndex(a, selection);
+      swap(a, smallIndex, selection);
     }
   }
   
